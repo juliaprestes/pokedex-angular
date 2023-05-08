@@ -1,7 +1,7 @@
 <app-search (emmitSearch)="getSearch($event)"></app-search>
 
 <section class="listagem">
-  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+  <ng-template ngFor let-pokemon [ngForOf]="pokemonList">
     <app-pokemon-card
       pokemon="{{ pokemon.name }}"
       imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
@@ -11,5 +11,19 @@
       alt="Deu erro na mostragem do pokemon"
       width="100%"
       *ngIf="apiError"
-  /></ng-template>
+    />
+  </ng-template>
+
+  <div class="pagination">
+    <button (click)="prevPage()">Anterior</button>
+    <button
+      *ngFor="let page of pageNumbers"
+      (click)="setPage(page)"
+      [class.active]="currentPage === page"
+    >
+      {{ page + 1 }}
+    </button>
+    <button (click)="nextPages()">Próximo</button>
+    <p>Página {{ currentPage + 1 }} de {{ totalPages }}</p>
+  </div>
 </section>
