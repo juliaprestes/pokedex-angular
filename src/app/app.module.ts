@@ -10,6 +10,7 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchComponent } from './shared/search/search.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ModalComentarioComponent } from './shared/modal-comentario/modal-comentario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderComponent } from './shared/header/header.component';
     PokemonCardComponent,
     ButtonComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalComentarioComponent
   ],
   imports: [
     BrowserModule,
