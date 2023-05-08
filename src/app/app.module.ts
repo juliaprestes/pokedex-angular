@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { PokemonListComponent } from './shared/components/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-card.component';
 import { ButtonComponent } from './shared/components/button/button.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchComponent } from './shared/search/search.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ModalComentarioComponent } from './shared/modal-comentario/modal-comentario.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { FormsModule } from '@angular/forms'
+import { FormComentarioComponent } from './shared/modal-comentario/form-comentario/form-comentario.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +25,18 @@ import { ModalComentarioComponent } from './shared/modal-comentario/modal-coment
     ButtonComponent,
     SearchComponent,
     HeaderComponent,
-    ModalComentarioComponent
+    ModalComentarioComponent,
+    FormComentarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

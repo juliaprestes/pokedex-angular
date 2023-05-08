@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
 @import './app/scss-global/variables.scss';
 @import './app/scss-global/reset.scss';
 @import './app/scss-global/rem-calc.scss';
@@ -14,3 +18,6 @@ main {
 	padding: 0 20px;
 	margin: 0 auto;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

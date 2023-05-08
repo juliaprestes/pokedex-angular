@@ -1,1 +1,9 @@
-<p>modal-comentario works!</p>
+<mat-dialog-actions>
+  <app-button
+    (click)="onOpenDialogClick()"
+    texto="Adicione um comentário"
+  ></app-button>
+</mat-dialog-actions>
+<p *ngIf="comentario">
+  {{ comentario }}
+</p>
