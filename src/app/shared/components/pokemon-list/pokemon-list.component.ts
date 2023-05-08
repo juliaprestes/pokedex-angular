@@ -10,10 +10,9 @@ export class PokemonListComponent implements OnInit {
 
   private pageSize = 20; // número de itens por página
   private currentPageIndex = 0; // índice da página atual
-  private totalItems = 0; // total de itens
 
   public currentPage = 0;
-  public itemsPerPage = 20;
+  public itemsPerPage = 15;
   public totalPages = 0;
   public pageNumbers: number[] = [];
   public pokemonList: any[] = [];
@@ -80,24 +79,6 @@ export class PokemonListComponent implements OnInit {
     }
   }
 
-  public previousPage() {
-    // verifica se é possível voltar para a página anterior
-    if (this.currentPageIndex > 0) {
-      this.currentPageIndex--;
-      this.updatePage();
-    }
-  }
-
-  public getSubList() {
-    // calcula o índice inicial e final da sublista
-    const subListStartIndex = this.currentPageIndex * this.pageSize;
-    const subListEndIndex = subListStartIndex + this.pageSize;
-
-    // cria uma nova lista com os itens da sublista
-    const subList = this.setAllPokemons.slice(subListStartIndex, subListEndIndex);
-
-    return subList;
-  }
 
   public getSearch(value: string) {
     const filter = this.setAllPokemons.filter((res: any) => {
@@ -107,20 +88,5 @@ export class PokemonListComponent implements OnInit {
     this.getAllPokemons = filter;
   }
 
-  get totalPage(): number {
-    return Math.ceil(this.totalItems / this.pageSize);
-  }
-
-  get currentPages(): number {
-    return this.currentPageIndex + 1;
-  }
-
-  get canGoNextPage(): boolean {
-    return this.currentPageIndex < this.totalPages - 1;
-  }
-
-  get canGoPreviousPage(): boolean {
-    return this.currentPageIndex > 0;
-  }
 
 }
