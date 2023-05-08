@@ -36,4 +36,6 @@ export class PokemonListComponent implements OnInit {
 
     this.getAllPokemons = filter;
   }
+
+
 }
