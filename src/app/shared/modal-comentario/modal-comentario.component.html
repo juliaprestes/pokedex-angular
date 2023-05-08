@@ -1,9 +1,13 @@
+<p *ngIf="comentario">
+  {{ comentario }}
+</p>
 <mat-dialog-actions>
   <app-button
     (click)="onOpenDialogClick()"
     texto="Adicione um comentário"
   ></app-button>
 </mat-dialog-actions>
-<p *ngIf="comentario">
-  {{ comentario }}
-</p>
+
+<mat-dialog-actions>
+  <app-button (click)="removeComment()" texto="Excluir comentário"></app-button>
+</mat-dialog-actions>

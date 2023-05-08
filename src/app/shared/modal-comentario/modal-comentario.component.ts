@@ -26,4 +26,8 @@ export class ModalComentarioComponent {
     });
   }
 
+  removeComment() {
+    this.comentario = "";
+  }
 }
+

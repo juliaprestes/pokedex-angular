@@ -4,7 +4,9 @@
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
     <app-pokemon-card
       pokemon="{{ pokemon.name }}"
-      imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
+      imagem="https://projectpokemon.org/images/normal-sprite/{{
+        pokemon.name
+      }}.gif"
     ></app-pokemon-card>
     <img
       src="assets/error.png"

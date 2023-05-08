@@ -17,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { FormsModule } from '@angular/forms'
 import { FormComentarioComponent } from './shared/modal-comentario/form-comentario/form-comentario.component'
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { FormComentarioComponent } from './shared/modal-comentario/form-comentar
     MatDialogModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule, FormsModule
+    MatInputModule,
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
