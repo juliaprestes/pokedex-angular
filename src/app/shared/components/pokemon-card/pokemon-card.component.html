@@ -1,0 +1,22 @@
+<div class="pokemon">
+  <section class="pokemon-imagem">
+    <img src="{{ imagem }}" alt="{{ pokemon }}" class="pokemon-imagem-jpg" />
+  </section>
+
+  <section class="pokemon-infos">
+    <div class="pokemon-nome">
+      <h2 class="pokemon-adicional">
+        {{ pokemon }}
+      </h2>
+    </div>
+    <div class="pokemon-comentario">
+      <div>
+        <p>comentario adicionado</p>
+      </div>
+      <div class="pokemon-botoes">
+        <app-button texto="Adicione um comentário"></app-button>
+        <app-button texto="Excluir comentário"></app-button>
+      </div>
+    </div>
+  </section>
+</div>

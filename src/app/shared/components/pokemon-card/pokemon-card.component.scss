@@ -1,0 +1,50 @@
+
+
+.pokemon{
+  background-color: skyblue;
+  border-radius: 10px;
+  margin: 20px 0 20px 0;
+  padding: 20px;
+  display: flex;
+}
+
+.pokemon-imagem{
+  place-self: center;
+}
+
+.pokemon-imagem-jpg{
+  width: 100px;
+  height: 100px;
+}
+
+.pokemon-infos{
+  flex-flow: column;
+    display: flex;
+    padding: 25px;
+    align-self: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.pokemon-comentario{
+  flex-flow: row;
+  display: flex;
+  gap: 20px;
+}
+
+.pokemon-botoes{
+  display: flex;
+    gap: 25px;
+}
+
+.pokemon-nome{
+  border: 4px solid #3e9dd8;
+    padding: 10px 15px;
+    border-radius: 25px;
+
+}
+
+.pokemon-adicional{
+  color: darkslateblue;
+    font-weight: 700;
+}

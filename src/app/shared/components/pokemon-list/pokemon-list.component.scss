@@ -1,0 +1,17 @@
+.listagem{
+  margin: 40px;
+  text-align: center;
+
+}
+
+
+.lista-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+pagination-controls{
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+<app-search (emmitSearch)="getSearch($event)"></app-search>
+
+<section class="listagem">
+  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+
+      <app-pokemon-card
+        pokemon="{{ pokemon.name }}"
+        imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
+      ></app-pokemon-card>
+      <img
+        src="assets/error.png"
+        alt="Deu erro na mostragem do pokemon"
+        width="100%"
+        *ngIf="apiError"
+      /></ng-template>
+</section>
