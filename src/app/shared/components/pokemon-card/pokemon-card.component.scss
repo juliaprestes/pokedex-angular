@@ -30,6 +30,7 @@
   flex-flow: row;
   display: flex;
   gap: 20px;
+  align-self: flex-end;
 }
 
 .pokemon-botoes{
@@ -47,4 +48,9 @@
 .pokemon-adicional{
   color: darkslateblue;
     font-weight: 700;
+}
+
+app-modal-comentario{
+  flex-direction: row;
+  display: flex;
 }
