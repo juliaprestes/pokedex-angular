@@ -9,5 +9,5 @@ export class PokemonCardComponent {
   @Input() pokemon: string = "";
   @Input() imagem: string = "";
   @Input() pokemonStatus: string = "";
-  @Input() pokemonStatusID: number = 0;
+  @Input() pokemonStatusID: any;
 }

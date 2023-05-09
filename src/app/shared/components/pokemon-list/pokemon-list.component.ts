@@ -18,24 +18,31 @@ export class PokemonListComponent implements OnInit {
   public itensPagina = 10;
   public totalPages = 0;
 
-  constructor(private pokeApiService: ApiService) { }
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getDadosAPI();
+  }
+
+  getDadosAPI() {
     this.isLoading = true;
-    this.pokeApiService.listarTodosPokemons.subscribe(
+    this.apiService.listarTodosPokemons.subscribe(
       response => {
         this.todosPokemons = response.results;
         this.pokemonsParaExibir = this.obterPokemonsParaPaginaAtual();
         this.totalPages = Math.ceil(this.todosPokemons.length / this.itensPagina);
         this.isLoading = false;
+        console.log(response);
+
       },
       error => {
         this.apiError = true;
         this.isLoading = false;
       }
     );
-  }
 
+  }
   public obterProcurar(value: string) {
     const filter = this.todosPokemons.filter((res: any) => {
       return !res.name.indexOf(value.toLowerCase());

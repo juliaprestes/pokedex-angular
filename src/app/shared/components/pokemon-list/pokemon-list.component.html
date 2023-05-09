@@ -11,16 +11,12 @@
     let-pokemon
     [ngForOf]="pokemonsParaExibir"
   >
-    <a
-      [routerLink]="['detalhes', pokemon.status.id]"
-      class="pokemon"
-      *ngIf="pokemon.status"
-    >
-      <app-pokemon-card
-        pokemon="{{ pokemon.name }}"
-        imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
-      ></app-pokemon-card>
-    </a>
+    <app-pokemon-card
+      pokemon="{{ pokemon.name }}"
+      imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
+      pokemonStatusID="{{ pokemon.status.id }}"
+      pokemonStatus="{{ pokemon.status }}"
+    ></app-pokemon-card>
   </ng-template>
   <img
     src="assets/error.png"

@@ -1,7 +1,17 @@
 <div class="pokemon">
-  <div class="pokemon__imagem">
-    <img src="{{ imagem }}" alt="{{ pokemon }}" class="pokemon__imagem__jpg" />
-  </div>
+  <a
+    [routerLink]="['detalhes', pokemonStatusID]"
+    class="pokemon"
+    *ngIf="pokemonStatus"
+  >
+    <div class="pokemon__imagem">
+      <img
+        src="{{ imagem }}"
+        alt="{{ pokemon }}"
+        class="pokemon__imagem__jpg"
+      />
+    </div>
+  </a>
 
   <section class="pokemon__infos">
     <div class="pokemon__nome">
