@@ -28,13 +28,24 @@
     Nenhum resultado encontrado.
   </div>
 </section>
-<button (click)="previousPage()" [disabled]="currentPage === 1 || isLoading">
-  Anterior
-</button>
-<button
-  (click)="nextPage()"
-  [disabled]="currentPage === getTotalPages() || isLoading"
->
-  Próxima
-</button>
-<div>Exibindo página {{ currentPage }} de {{ totalPages }}</div>
+<section class="paginacao">
+  <div class="paginacao-conteudo">
+    <button
+      class="paginacao-botao"
+      (click)="previousPage()"
+      [disabled]="currentPage === 1 || isLoading"
+    >
+      Anterior
+    </button>
+
+    <div class="paginacao-info">{{ currentPage }} de {{ totalPages }}</div>
+
+    <button
+      class="paginacao-botao"
+      (click)="nextPage()"
+      [disabled]="currentPage === getTotalPages() || isLoading"
+    >
+      Próxima
+    </button>
+  </div>
+</section>
