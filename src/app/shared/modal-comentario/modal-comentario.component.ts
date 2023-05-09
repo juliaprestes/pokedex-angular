@@ -16,7 +16,7 @@ export class ModalComentarioComponent {
 
   constructor(private matDialog: MatDialog) { }
 
-  onOpenDialogClick() {
+  onDialogClick() {
     const dialogRef = this.matDialog.open(FormComentarioComponent, {
       data: { name: this.comentario },
     });
@@ -26,7 +26,7 @@ export class ModalComentarioComponent {
     });
   }
 
-  removeComment() {
+  removerComentario() {
     this.comentario = "";
   }
 

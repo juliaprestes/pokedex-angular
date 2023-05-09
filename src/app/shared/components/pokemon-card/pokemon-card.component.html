@@ -1,16 +1,17 @@
 <div class="pokemon">
-  <section class="pokemon-imagem">
-    <img src="{{ imagem }}" alt="{{ pokemon }}" class="pokemon-imagem-jpg" />
-  </section>
+  <div class="pokemon__imagem">
+    <img src="{{ imagem }}" alt="{{ pokemon }}" class="pokemon__imagem__jpg" />
+  </div>
 
-  <section class="pokemon-infos">
-    <div class="pokemon-nome">
-      <h2 class="pokemon-adicional">
+  <section class="pokemon__infos">
+    <div class="pokemon__nome">
+      <h2 class="pokemon__adicional">
         {{ pokemon }}
       </h2>
     </div>
-    <div class="pokemon-comentario">
-      <div class="pokemon-botoes">
+
+    <div class="pokemon__comentario">
+      <div class="pokemon__botoes">
         <app-modal-comentario></app-modal-comentario>
       </div>
     </div>

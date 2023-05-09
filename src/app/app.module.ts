@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './shared/components/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-card.component';
 import { ButtonComponent } from './shared/components/button/button.component';
-import { SearchComponent } from './shared/search/search.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ModalComentarioComponent } from './shared/modal-comentario/modal-comentario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +18,8 @@ import { FormComentarioComponent } from './shared/modal-comentario/form-comentar
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatButtonModule } from '@angular/material/button';
 import { FavoriteButtonComponent } from './shared/components/button/favorite-button/favorite-button.component'
+import { SearchComponent } from './shared/components/search/search.component';
+import { PokemonDetailsComponent } from './shared/components/pokemon-details/pokemon-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { FavoriteButtonComponent } from './shared/components/button/favorite-but
     HeaderComponent,
     ModalComentarioComponent,
     FormComentarioComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-<app-search (emmitSearch)="getSearch($event)"></app-search>
+<app-header></app-header>
+
+<app-search (emmitSearch)="obterProcurar($event)"></app-search>
 
 <div *ngIf="isLoading">Carregando...</div>
 
@@ -7,16 +9,19 @@
     *ngIf="!isLoading"
     ngFor
     let-pokemon
-    [ngForOf]="pokemonsToDisplay"
+    [ngForOf]="pokemonsParaExibir"
   >
-    <app-pokemon-card
-      pokemon="{{ pokemon.name }}"
-      imagem="https://projectpokemon.org/images/normal-sprite/{{
-        pokemon.name
-      }}.gif"
-    ></app-pokemon-card>
+    <a
+      [routerLink]="['detalhes', pokemon.status.id]"
+      class="pokemon"
+      *ngIf="pokemon.status"
+    >
+      <app-pokemon-card
+        pokemon="{{ pokemon.name }}"
+        imagem="{{ pokemon.status.sprites.other.dream_world.front_default }}"
+      ></app-pokemon-card>
+    </a>
   </ng-template>
-
   <img
     src="assets/error.png"
     alt="Deu erro na mostragem do pokemon"
@@ -24,26 +29,26 @@
     *ngIf="apiError"
   />
 
-  <div *ngIf="pokemonsToDisplay.length === 0 && !isLoading && !apiError">
+  <div *ngIf="pokemonsParaExibir.length === 0 && !isLoading && !apiError">
     Nenhum resultado encontrado.
   </div>
 </section>
 <section class="paginacao">
-  <div class="paginacao-conteudo">
+  <div class="paginacao__conteudo">
     <button
-      class="paginacao-botao"
-      (click)="previousPage()"
-      [disabled]="currentPage === 1 || isLoading"
+      class="paginacao__botao"
+      (click)="paginaAnterior()"
+      [disabled]="paginaAtual === 1 || isLoading"
     >
       Anterior
     </button>
 
-    <div class="paginacao-info">{{ currentPage }} de {{ totalPages }}</div>
+    <div class="paginacao__info">{{ paginaAtual }} de {{ totalPages }}</div>
 
     <button
-      class="paginacao-botao"
-      (click)="nextPage()"
-      [disabled]="currentPage === getTotalPages() || isLoading"
+      class="paginacao__botao"
+      (click)="proximaPagina()"
+      [disabled]="paginaAtual === obterTotalPaginas() || isLoading"
     >
       Próxima
     </button>

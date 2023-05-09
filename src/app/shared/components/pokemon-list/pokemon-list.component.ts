@@ -8,25 +8,25 @@ import { ApiService } from '../../services/api.service';
 })
 export class PokemonListComponent implements OnInit {
 
-  private allPokemons: any[] = [];
-  public pokemonsToDisplay: any[] = [];
+  private todosPokemons: any[] = [];
+  public pokemonsParaExibir: any[] = [];
 
   public apiError: boolean = false;
   public isLoading: boolean = false;
 
-  public currentPage = 1;
-  public pageSize = 10;
+  public paginaAtual = 1;
+  public itensPagina = 10;
   public totalPages = 0;
 
   constructor(private pokeApiService: ApiService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.pokeApiService.apiListAllPokemons.subscribe(
+    this.pokeApiService.listarTodosPokemons.subscribe(
       response => {
-        this.allPokemons = response.results;
-        this.pokemonsToDisplay = this.getPokemonsForCurrentPage();
-        this.totalPages = Math.ceil(this.allPokemons.length / this.pageSize); // define o valor de totalPages
+        this.todosPokemons = response.results;
+        this.pokemonsParaExibir = this.obterPokemonsParaPaginaAtual();
+        this.totalPages = Math.ceil(this.todosPokemons.length / this.itensPagina);
         this.isLoading = false;
       },
       error => {
@@ -36,36 +36,36 @@ export class PokemonListComponent implements OnInit {
     );
   }
 
-  public getSearch(value: string) {
-    const filter = this.allPokemons.filter((res: any) => {
+  public obterProcurar(value: string) {
+    const filter = this.todosPokemons.filter((res: any) => {
       return !res.name.indexOf(value.toLowerCase());
     });
 
-    this.pokemonsToDisplay = filter;
-    this.currentPage = 1; // reset page to 1 after search
+    this.pokemonsParaExibir = filter;
+    this.paginaAtual = 1;
   }
 
-  public getPokemonsForCurrentPage() {
-    const startIndex = (this.currentPage - 1) * this.pageSize;
-    const endIndex = startIndex + this.pageSize;
-    return this.allPokemons.slice(startIndex, endIndex);
+  public obterPokemonsParaPaginaAtual() {
+    const startIndex = (this.paginaAtual - 1) * this.itensPagina;
+    const endIndex = startIndex + this.itensPagina;
+    return this.todosPokemons.slice(startIndex, endIndex);
   }
 
-  public previousPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.pokemonsToDisplay = this.getPokemonsForCurrentPage();
+  public paginaAnterior() {
+    if (this.paginaAtual > 1) {
+      this.paginaAtual--;
+      this.pokemonsParaExibir = this.obterPokemonsParaPaginaAtual();
     }
   }
 
-  public nextPage() {
-    if (this.currentPage < this.getTotalPages()) {
-      this.currentPage++;
-      this.pokemonsToDisplay = this.getPokemonsForCurrentPage();
+  public proximaPagina() {
+    if (this.paginaAtual < this.obterTotalPaginas()) {
+      this.paginaAtual++;
+      this.pokemonsParaExibir = this.obterPokemonsParaPaginaAtual();
     }
   }
 
-  public getTotalPages() {
-    return Math.ceil(this.allPokemons.length / this.pageSize);
+  public obterTotalPaginas() {
+    return Math.ceil(this.todosPokemons.length / this.itensPagina);
   }
 }

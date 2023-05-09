@@ -7,9 +7,6 @@ import { EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./favorite-button.component.scss']
 })
 export class FavoriteButtonComponent {
-
-
-
   @Input() selected: boolean = false;
   @Output() selectedChange = new EventEmitter<boolean>();
 
