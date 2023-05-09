@@ -18,7 +18,8 @@ import { MatInputModule } from '@angular/material/input'
 import { FormsModule } from '@angular/forms'
 import { FormComentarioComponent } from './shared/modal-comentario/form-comentario/form-comentario.component'
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { MatButtonModule } from '@angular/material/button';
+import { FavoriteButtonComponent } from './shared/components/button/favorite-button/favorite-button.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SearchComponent,
     HeaderComponent,
     ModalComentarioComponent,
-    FormComentarioComponent
+    FormComentarioComponent,
+    FavoriteButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
