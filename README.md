@@ -8,7 +8,7 @@ Application:
 
 Add comment:
 
-![image](https://github.com/juliaprestes/pokedex-angular/assets/71856252/9b29e695-a653-4668-9e20-2b9ff4de9698)
+![image](https://github.com/juliaprestes/pokedex-angular/assets/71856252/56b5a4ee-1e5f-47f1-a7cc-3680998a6b4b)
 
 Search:
 
