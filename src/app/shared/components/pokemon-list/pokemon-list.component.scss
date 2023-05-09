@@ -4,28 +4,24 @@
 
 }
 
-.lista-pokemon {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
-}
-
 .paginacao{
   padding-bottom: 20px;
 
-  &-conteudo{
+  &__conteudo {
     display: flex;
     justify-content: center;
     gap: 20px;
     align-items: center;
   }
-  &-info{
+
+  &__info {
    color: white;
    font-weight: 600;
   }
-  &-botao {
+
+  &__botao {
     border-radius: 10px;
     padding: 10px;
   }
 }
+

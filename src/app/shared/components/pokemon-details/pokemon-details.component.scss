@@ -1,0 +1,50 @@
+.card {
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+    flex-flow: column;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 10px;
+  .pokemon{
+    &__status{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    }
+    &__names{
+      text-align: right;
+    font-size: 2rem;
+    }
+    &__status__statistics{
+      display: flex;
+      flex-flow: column;
+      gap: 50px;
+      text-align: right;
+      &-title{
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      &-list{
+        line-height: 20px;
+        color: white;
+      }
+    }
+  }
+  .slideInLeft{
+    font-size: 3rem;
+    color: white;
+  }
+  .slideInRight{
+    font-size: 2rem;
+    color: #cccccc;
+  }
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
