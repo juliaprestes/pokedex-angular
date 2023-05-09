@@ -5,7 +5,6 @@
 
 @import './app/scss-global/variables.scss';
 @import './app/scss-global/reset.scss';
-@import './app/scss-global/rem-calc.scss';
 
 html {
 	font-family: 'Roboto', sans-serif;
@@ -13,7 +12,7 @@ html {
 }
 
 main {
-	max-width: rem-calc(600);
+	max-width: 600px;
 	box-sizing: border-box;
 	padding: 0 20px;
 	margin: 0 auto;
