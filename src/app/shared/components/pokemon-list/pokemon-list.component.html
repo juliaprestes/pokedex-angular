@@ -4,7 +4,7 @@
 
 <div *ngIf="isLoading">Carregando...</div>
 
-<section class="listagem">
+<div class="listagem">
   <ng-template
     *ngIf="!isLoading"
     ngFor
@@ -28,8 +28,8 @@
   <div *ngIf="pokemonsParaExibir.length === 0 && !isLoading && !apiError">
     Nenhum resultado encontrado.
   </div>
-</section>
-<section class="paginacao">
+</div>
+<div class="paginacao">
   <div class="paginacao__conteudo">
     <button
       class="paginacao__botao"
@@ -49,4 +49,4 @@
       Próxima
     </button>
   </div>
-</section>
+</div>
